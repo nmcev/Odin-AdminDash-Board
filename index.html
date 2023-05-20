@@ -5,8 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin Dashboard</title>
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Add custom CSS styles here */
+        .grid {
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .content {
+            height: calc(100vh - 3rem);
+            /* Adjust the height as needed */
+            overflow-y: auto;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,9 +32,9 @@
     <div class="grid grid-cols-12">
 
         <!-- side bar -->
-        <div class="bg-purple-400 col-span-2  flex flex-col gap-y-16 pl-7 h-screen">
+        <sidebar class="bg-purple-400 col-span-2  flex flex-col gap-y-16 pl-7 h-screen sidebar">
             <!-- icon and header -->
-            <div class="flex gap-x-4 pt-4">
+            <div class="flex gap-x-4 pt-4 items-end">
                 <img class="w-12" src="/images/view-dashboard.svg" alt="icon">
                 <h1 class="font-semibold text-3xl flex items-center text-white">Dashboard</h1>
             </div>
@@ -76,13 +94,80 @@
             </div>
             <!-- /other list -->
 
-        </div>
+        </sidebar>
         <!-- /side bar -->
 
         <!--main content-->
-        <div class="bg-white col-span-10">
-            <div class="bg-zinc-200">
+        <div class="bg-white col-span-10 grid-rows-12">
+            <!-- header -->
+            <div class="row-span-2 pb-5 flex flex-col ">
+                <!-- top section  -->
+                <div class="flex justify-between pt-4">
+                    <!-- search section -->
+                    <div class="flex pl-20 items-center gap-x-4">
+                        <img src="images/magnify.svg" alt="">
+                        <input class="rounded-3xl h-8 bg-zinc-200 w-96" type="search" name="" id="">
+                    </div>
+                    <!-- /search section -->
+
+                    <!-- user info section -->
+                    <div class="flex gap-x-8 items-center pr-20">
+                        <img class="w-8" src="images/bell-ring-outline.svg" alt="Notification ">
+                        <img class="rounded-full w-16" src="images/avatar" alt="user pic">
+                        <h2 class="font-bold">User Name</h2>
+                    </div>
+                    <!--/user info section -->
+                </div>
+                <!-- /top section  -->
+
+                <!-- bottom -->
+                <div class="flex justify-between pt-5 items-center">
+
+                    <!-- user pic and sureName and welcome  -->
+                    <div class="flex pl-20 gap-x-5 items-center">
+                        <!-- user pic -->
+                        <div>
+                            <img class="rounded-full w-16" src="images/avatar" alt="">
+                            <!-- /user pic -->
+                        </div>
+                        <!-- sureName and welcome -->
+                        <div>
+                            <h2 class="font-bold ">Hi there</h2>
+                            <h1 class="font-semibold text-xl ">sureName (@UserName )</h1>
+                            <!-- /sureName and welcome -->
+                        </div>
+                    </div>
+                    <!-- /user pic and sureName and welcome  -->
+                    <!-- mange button -->
+                    <div class="flex gap-x-5 pr-20">
+                        <button type="button"
+                            class="inline-block rounded-full bg-blue-500  px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-blue-400  hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-blue-400  focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]">
+                            New
+                        </button>
+
+                        <button type="button"
+                            class="inline-block rounded-full bg-blue-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-blue-400  hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-blue-400  focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]">
+                            Upload
+                        </button>
+
+                        <button type="button"
+                            class="inline-block rounded-full bg-blue-500  px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-blue-400 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-blue-400  focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]">
+                            Shear
+                        </button>
+
+                    </div>
+                    <!-- /mange button -->
+                </div>
+                <!-- /bottom -->
+
             </div>
+            <!-- /header -->
+
+            <!-- content below -->
+            <div class="bg-zinc-200 h-full content">
+                
+            </div>
+            <!-- /content below -->
         </div>
         <!-- /main content-->
     </div>
